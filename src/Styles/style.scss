@@ -1,0 +1,106 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@import "./Variables/variables";
+
+
+body {
+    font-family: 'Spartan', sans-serif;
+    min-height: 100vh;
+    background-color: $col-main-blue;
+}
+
+input {
+    font: inherit;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 20%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc--title {
+    // background-color: lightblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        color: $col-white;
+    }
+}
+
+.toggle--num {
+    font-size: 0.8rem;
+    margin-left: 0.5em;
+    color: $col-white;
+}
+
+.screen {
+    width: 100%;
+    height: 5rem;
+    border-radius: 10px;
+    background-color: $col-screen;
+    margin: 2em;
+}
+
+.key--pad {
+    background-color: $col-toggle-background;
+    padding: 2em;
+    border-radius: 10px;
+    width: 100%;
+    display:grid;
+    gap: 1em;
+    grid-template-columns:  repeat(4,1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.small {
+    grid-column: auto / span 1;
+    grid-row: auto / span 1;
+}
+
+.large {
+    grid-column: auto / span 2;
+    grid-row: auto / span 1;
+}
+
+
+
+.btn--main{
+    @include btn($col-main-key, $col-dark-text, $col-main-shadow)
+}
+
+.btn--dark{
+    @include btn($col-key-dark-blue, $col-white, $col-key-shadow)
+}
+
+.btn--equal {
+    @include btn($col-key-red, $col-white, $col-red-shadow)
+}
+
+footer {
+    background-color: $col-white;
+    flex-basis: 20%;
+}
+
+.attribution { 
+    font-size: 14px; 
+    text-align: center; 
+
+    a { color: hsl(228, 45%, 44%);}
+}

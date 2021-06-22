@@ -1,0 +1,3 @@
+const buttonList = [{ key: 7, class: "btn--main small" }, { key: 8, class: "btn--main small" }, { key: 9, class: "btn--main small" }, { key: "DEL", class: "btn--dark small" }, { key: 4, class: "btn--main small" }, { key: 5, class: "btn--main small" }, { key: 6, class: "btn--main small" }, { key: "+", class: "btn--main small" }, { key: 1, class: "btn--main small" }, { key: 2, class: "btn--main small" }, { key: 3, class: "btn--main small" }, { key: "-", class: "btn--main small" }, { key: ".", class: "btn--main small" }, { key: 0, class: "btn--main small" }, { key: "/", class: "btn--main small" }, { key: "x", class: "btn--main small" }, { key: "RESET", class: "btn--dark large" }, { key: "=", class: "btn--equal large" }];
+
+export default buttonList;
