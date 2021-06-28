@@ -1,6 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
+    transition: background-color 0.2s ease-in-out;
 }
 
 @import "./Variables/variables";
@@ -8,14 +9,13 @@
 
 body {
     font-family: 'Spartan', sans-serif;
-    min-height: 100vh;
-    background-color: $col-main-blue;
+    min-height: 100vh;    
+    background: var(--col-main-color);
 }
 
-input {
+ button {
     font: inherit;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
 header {
@@ -25,7 +25,9 @@ header {
 }
 
 .container {
-    width: 20%;
+    width: 80%;
+    min-width: 350px;
+    max-width: 600px;
     padding: 2em;
     display: flex;
     flex-direction: column;
@@ -39,32 +41,39 @@ header {
     display: flex;
     justify-content: space-between;
 
-    h3 {
-        color: $col-white;
+    h1 {
+        color: var(--col-title-text);
     }
 }
 
-.toggle--num {
-    font-size: 0.8rem;
-    margin-left: 0.5em;
-    color: $col-white;
-}
+@import "./toggle";
 
 .screen {
     width: 100%;
-    height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 8rem;
     border-radius: 10px;
-    background-color: $col-screen;
+    background-color: var(--col-screen);
     margin: 2em;
+    padding: 2em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    h1 {
+        color: var(--col-screen-text);
+        font-size: 2.5rem;
+    }
 }
 
 .key--pad {
-    background-color: $col-toggle-background;
+    background-color: var(--col-toggle-background);
     padding: 2em;
     border-radius: 10px;
     width: 100%;
     display:grid;
-    gap: 1em;
+    gap: 1.5em;
     grid-template-columns:  repeat(4,1fr);
     grid-template-rows: repeat(5, 1fr);
 }
@@ -82,25 +91,89 @@ header {
 
 
 .btn--main{
-    @include btn($col-main-key, $col-dark-text, $col-main-shadow)
+    @include btn(var(--col-main-key), var(--col-main-text), var(--col-main-shadow), 2rem, 0.75em)
 }
 
 .btn--dark{
-    @include btn($col-key-dark-blue, $col-white, $col-key-shadow)
+    @include btn(var(--col-key-dark-blue), var(--col-secondary-text), var(--col-key-shadow), 1.2rem, 0.75em) 
 }
 
 .btn--equal {
-    @include btn($col-key-red, $col-white, $col-red-shadow)
+    @include btn(var(--col-key-equal), var(--col-equal-text), var(--col-red-shadow), 1.2rem, 0.75em)
 }
 
 footer {
-    background-color: $col-white;
-    flex-basis: 20%;
+    background-color: var(--col-secondary-text);
+    padding: 1em;
 }
 
 .attribution { 
-    font-size: 14px; 
+    font-size: 0.8rem; 
     text-align: center; 
 
     a { color: hsl(228, 45%, 44%);}
 }
+
+@media  (max-width: 640px) {
+    html {
+        font-size: 14px;
+    }
+
+    .screen {
+        height: 6rem;
+        margin: 2em;
+        padding: 1em;
+    
+        h1 {
+            color: var(--col-screen-text);
+            font-size: 2rem;
+        }
+    }
+
+    .key--pad {
+        padding: 1em;
+        border-radius: 10px;
+        width: 100%;
+        gap: 1em;
+    }
+
+    .container {
+        width: 90%;
+        min-width: none;
+    }
+}
+
+@media  (max-width: 375px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        min-width: 0px;
+        padding: 2em;
+    }
+
+    .screen {
+        height: 6rem;
+        margin: 1.5em;
+        padding: 1em;
+    
+        h1 {
+            color: var(--col-screen-text);
+            font-size: 1.8rem;
+        }
+    }
+
+    .btn--main{
+        @include btn(var(--col-main-key), var(--col-main-text), var(--col-main-shadow), 1.5rem, 0.5em)
+    }
+    
+    .btn--dark{
+        @include btn(var(--col-key-dark-blue), var(--col-secondary-text), var(--col-key-shadow), 1rem, 0.5em)
+    }
+    
+    .btn--equal {
+        @include btn(var(--col-key-equal), var(--col-equal-text), var(--col-red-shadow), 1rem, 0.5em)
+    }
+  }

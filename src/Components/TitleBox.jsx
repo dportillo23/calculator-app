@@ -4,7 +4,7 @@ import ToggleBox from "./ToggleBox"
 function TitleBox () {
     return(
         <div className="calc--title">
-          <h3>calc</h3>
+          <h1>calc</h1>
           <ToggleBox />
         </div>
     )

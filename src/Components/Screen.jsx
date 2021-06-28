@@ -1,7 +1,7 @@
 
 function Screen (props) {
     return(<div className="screen">
-        {props.display}
+        <h1 className="screen--text">{props.display}</h1>
     </div>)
 }
 

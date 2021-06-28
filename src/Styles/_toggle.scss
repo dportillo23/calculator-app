@@ -1,0 +1,66 @@
+.toggle--box {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.theme {
+    text-transform: uppercase;
+    color: var(--col-title-text);
+}
+
+.toggle--num {
+    font-size: 1rem;
+    color: var(--col-title-text);
+}
+
+.radio-wrapper {
+    background: var(--col-toggle-background);
+    border-radius: 25px;
+    position: relative;
+    height: 1.5rem;
+    width: 100%;
+    cursor: pointer;
+
+    label {
+        color: var(--col-title-text);
+        width: 1.5rem;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        top: -1.5rem;
+        cursor: pointer;
+        height: 3rem;
+        z-index: 1;
+    }
+}
+
+input[type=radio] {
+    cursor: pointer;
+    position:relative;
+    z-index: 1;
+    display: none;
+}
+
+.selector {
+    width: 20px;
+    height: 20px;
+    background-color: var(--col-key-equal);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0.25em;
+    transform: translate(0, -50%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.theme-1:checked ~ .selector {
+    transform: translate(0, -50%);
+}
+.theme-2:checked ~ .selector {
+    transform: translate(1.4rem, -50%);
+}
+.theme-3:checked ~ .selector {
+    transform: translate(2.8rem, -50%);
+}
+

@@ -1,43 +1,95 @@
 // Theme 1
-
+.Theme-1 {
 // Backgrounds
-$col-main-blue: hsl(222, 26%, 31%);
-$col-toggle-background: hsl(223, 31%, 20%);
-$col-screen: hsl(224, 36%, 15%);
+--col-main-color: hsl(222, 26%, 31%);
+--col-toggle-background: hsl(223, 31%, 20%);
+--col-screen: hsl(224, 36%, 15%);
 
 // Keys
-$col-key-dark-blue: hsl(225, 21%, 49%);
-$col-key-shadow: hsl(224, 28%, 35%);
+--col-key-dark-blue: hsl(225, 21%, 49%);
+--col-key-shadow: hsl(224, 28%, 35%);
 
-$col-key-red: hsl(6, 63%, 50%);
-$col-red-shadow: hsl(6, 70%, 34%);
+--col-key-equal: hsl(6, 63%, 50%);
+--col-red-shadow: hsl(6, 70%, 34%);
 
-$col-main-key: hsl(30, 25%, 89%);
-$col-main-shadow: hsl(28, 16%, 65%);
+--col-main-key: hsl(30, 25%, 89%);
+--col-main-shadow: hsl(28, 16%, 65%);
 
 // Text
-$col-dark-text: hsl(221, 14%, 31%);
-$col-white: hsl(0, 0, 100%);
+--col-main-text: hsl(221, 14%, 31%);
+--col-title-text: white;
+--col-secondary-text: white;
+--col-equal-text: white;
+--col-screen-text: white;
+}
+// Theme 2
+.Theme-2 {
+
+// Backgrounds
+--col-main-color: hsl(0, 0%, 90%);
+--col-toggle-background: hsl(0, 5%, 81%);
+--col-screen: hsl(0, 0%, 93%);
+
+// Keys
+--col-key-dark-blue: hsl(185, 42%, 37%);
+--col-key-shadow: hsl(185, 58%, 25%);
+
+--col-key-equal:hsl(25, 98%, 40%);
+--col-red-shadow: hsl(25, 99%, 27%);
+
+--col-main-key: hsl(45, 7%, 89%);
+--col-main-shadow: hsl(35, 11%, 61%);
+
+//  Text
+--col-main-text: hsl(60, 10%, 19%);
+--col-title-text: hsl(60, 10%, 19%);
+--col-secondary-text: white;
+--col-equal-text: white;
+--col-screen-text: hsl(60, 10%, 19%);
+};
 
 
-//  Theme 3
-// $col-violet:  hsl(281, 89%, 26%);
-// $col-magenta: hsl(285, 91%, 52%);
-// $col-cyan: hsl(176, 100%, 44%);
-// $col-soft-cyan: hsl(177, 92%, 70%);
-// $col-dark-violet: hsl(268, 47%, 21%);
-// $col-dark-magenta: hsl(290, 70%, 36%);
+// ### Theme 3
+.Theme-3 {
+// Backgrounds
 
+--col-main-color: hsl(268, 75%, 9%);
+--col-toggle-background: hsl(268, 71%, 12%);
+--col-screen: hsl(268, 71%, 12%);
 
-@mixin btn($back-color, $text-color, $shadow-color) {
-    display: grid;
+// Keys
+--col-key-dark-blue: hsl(281, 89%, 26%);
+--col-key-shadow: hsl(285, 91%, 52%);
+
+--col-key-equal: hsl(176, 100%, 44%);
+--col-red-shadow:hsl(177, 92%, 70%);
+
+--col-main-key: hsl(268, 47%, 21%);
+--col-main-shadow: hsl(290, 70%, 36%);
+
+// Text
+--col-main-text:hsl(52, 100%, 62%);
+--col-title-text: hsl(52, 100%, 62%);
+--col-secondary-text: white;
+--col-equal-text: hsl(198, 20%, 13%);
+--col-screen-text: hsl(52, 100%, 62%);
+};
+
+@mixin btn($back-color, $text-color, $shadow-color, $size, $padding) {
+    border: none;
+    display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 10px;
     background-color: $back-color;
     color: $text-color;
-    box-shadow: 0px 3px 3px -2px $shadow-color;
+    box-shadow: 0px 4px $shadow-color;
     width: 100%;
-    height: 2em;
-    font-size: 1.2rem;
-    padding: 0.25em;
+    height: 4rem;
+    font-size: $size;
+    padding: $padding;
+
+    &:focus {
+        outline: none;
+    }
 }

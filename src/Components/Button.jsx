@@ -1,12 +1,13 @@
 
 function Button (props) {
+    function handleClick(e) {
+        console.log(e.target)
+    }
+
     return (
-        <input type="button" value={props.button} className={props.class}/>
+        <button title={props.type} className={props.class} onClick={handleClick}>{props.button}</button>
 
     )
 }
-
-
-
 
 export default Button;
