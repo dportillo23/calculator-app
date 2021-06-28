@@ -7,7 +7,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-    -[Desktop](#Desktop)
+    - [Desktop](#Desktop)
     - [Mobile](#Mobile)
   - [Links](#links)
 - [My process](#my-process)
@@ -157,10 +157,6 @@ Eventhough it is a simple scss, it was the first time I used mixins and I'm prou
     }
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
