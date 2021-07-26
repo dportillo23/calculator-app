@@ -60,7 +60,7 @@ Users should be able to:
 
 ### What I learned
 
-This was my first ever project using read, it was a very interesting project and I struggle a bit with the toggle and making it work changing the themes.
+This was my first ever project using react, it was a very interesting project and I struggle a bit with the toggle and making it work changing the themes.
 
 Below you can find the toggle component code snippet and the function to delete a space:
 
